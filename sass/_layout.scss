@@ -1,0 +1,32 @@
+.container {
+  width: 1440px;
+  margin: auto;
+
+  @media only screen and (max-width: $bp-largest) {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.header {
+  background: var(--color-dark-1);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+    padding: $margin-header-largest 0;
+    @media only screen and (max-width: $bp-largest) {
+      padding: $margin-header-large 20px;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      padding: $margin-header-medium 20px;
+    }
+  }
+}
+
+.welcome {
+  background: var(--color-dark-1);
+}

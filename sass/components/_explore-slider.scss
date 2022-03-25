@@ -1,0 +1,104 @@
+.wrapper-img-slider {
+  margin-top: 15px;
+  width: 720px;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  @media only screen and (max-width: $bp-large) {
+    margin-top: 0px;
+    margin: auto;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    width: calc(100% - 20px);
+    height: 705px;
+    margin-top: 0px;
+  }
+  @media only screen and (max-width: $bp-small) {
+    height: 368px;
+  }
+}
+.wrapper-img-slider .images {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.wrapper-img-slider .images .img-1 {
+  height: 100%;
+  width: 100%;
+  background: url('assets/img/explore-slider/after.jpg   ') no-repeat;
+  background-size: cover;
+}
+.wrapper-img-slider .images .img-2 {
+  position: absolute;
+  height: 100%;
+  width: 61%;
+
+  background: url('assets/img/explore-slider/before.jpg') no-repeat;
+  background-size: cover;
+}
+.wrapper-img-slider .slider-2 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+.wrapper-img-slider .slider-2 input {
+  width: 100%;
+  outline: none;
+  background: none;
+  -webkit-appearance: none;
+}
+.slider-2 input::-webkit-slider-thumb {
+  height: 700px;
+  width: 3px;
+  background: none;
+  -webkit-appearance: none;
+  cursor: col-resize;
+  @media only screen and (max-width: $bp-small) {
+    height: 368px;
+    width: 3px;
+  }
+}
+.slider-2 .drag-line {
+  width: 5px;
+  height: 700px;
+  position: absolute;
+  left: 61%;
+  pointer-events: none;
+  @media only screen and (max-width: $bp-small) {
+    height: 368px;
+    width: 3px;
+  }
+}
+.slider-2 .drag-line::before,
+.slider-2 .drag-line::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 330px;
+  background: #ffffff;
+  @media only screen and (max-width: $bp-small) {
+    height: 180px;
+  }
+}
+.slider-2 .drag-line::before {
+  top: 0;
+}
+.slider-2 .drag-line::after {
+  bottom: 0;
+}
+.slider-2 .drag-line span {
+  height: 40px;
+  width: 40px;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media only screen and (max-width: $bp-small) {
+    height: 15px;
+    width: 15px;
+    border: 3px solid #ffffff;
+  }
+}

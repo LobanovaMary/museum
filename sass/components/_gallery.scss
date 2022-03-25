@@ -1,0 +1,85 @@
+.gallary {
+  background: #000;
+  &__title {
+    color: #fff;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    @media only screen and (max-width: $bp-large) {
+      padding-top: 52px;
+      padding-bottom: 60px;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      padding-top: 42px;
+      padding-bottom: 40px;
+    }
+  }
+}
+.picture-container {
+  height: 1960px;
+  z-index: 3;
+  overflow: hidden;
+  position: relative;
+  @media only screen and (max-width: $bp-largest) {
+    height: 1660px;
+  }
+  @media only screen and (max-width: $bp-large) {
+    height: 1260px;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    height: 1080px;
+  }
+  @media only screen and (max-width: $bp-small) {
+    height: 632px;
+  }
+}
+
+.picture-container::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 360px;
+  z-index: 5;
+  background: transparent;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  bottom: 0;
+}
+.picture-inner-container {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.col-1 {
+  display: flex;
+  flex-direction: column;
+
+  width: calc(33.3% - 18px);
+  margin-top: 50px;
+  @media only screen and (max-width: $bp-medium) {
+    width: calc(50% - 12px);
+  }
+}
+
+.col-2 {
+  display: flex;
+  flex-direction: column;
+
+  width: calc(33.3% - 18px);
+  @media only screen and (max-width: $bp-medium) {
+    width: calc(50% - 12px);
+  }
+}
+
+.col-3 {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+
+  width: calc(33.3% - 18px);
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
+}
+.gallery__img {
+  margin-bottom: 25px;
+}

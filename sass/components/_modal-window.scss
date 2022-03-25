@@ -1,0 +1,706 @@
+.close-modal {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  padding: 91px 235px;
+  border-radius: 5px;
+  height: 845px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 500;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper-booking {
+  width: 400px;
+}
+.modal {
+  &__title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 55px;
+    text-transform: uppercase;
+    color: #9d8665;
+  }
+  &__sub-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #710707;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin-bottom: 60px;
+  }
+  &__sub-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 3px;
+    width: 100%;
+    background: var(--color-red);
+  }
+  &__item-date {
+    width: 190px;
+    position: relative;
+  }
+  &__date-input {
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    width: 100%;
+    height: 45px;
+    padding-left: 45px;
+    padding-right: 14px;
+    border: 1px solid #030303;
+  }
+  &__item-date::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 45px;
+    height: 45px;
+    top: 2px;
+    background-image: url(assets/icon/date1.svg);
+    background-repeat: no-repeat;
+    background-position: 11px 12px;
+  }
+  &__item-date::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 45px;
+    height: 45px;
+    top: 2px;
+    right: -2px;
+    background-image: url(assets/icon/date2.svg);
+    background-repeat: no-repeat;
+    background-position: 11px 12px;
+  }
+  &__item-time {
+    width: 190px;
+    position: relative;
+  }
+  &__time-input {
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    width: 100%;
+    height: 45px;
+    padding-left: 45px;
+    padding-right: 14px;
+    border: 1px solid #030303;
+  }
+  &__item-time::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 45px;
+    height: 45px;
+    top: 2px;
+    background-image: url(assets/icon/time.svg);
+    background-repeat: no-repeat;
+    background-position: 11px 12px;
+  }
+  &__item-time::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 45px;
+    height: 45px;
+    top: 2px;
+    right: -2px;
+    background-image: url(assets/icon/date2.svg);
+    background-repeat: no-repeat;
+    background-position: 11px 12px;
+  }
+  &__item-name {
+    width: 400px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  &__name-input {
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    width: 100%;
+    height: 45px;
+    padding-left: 45px;
+    padding-right: 14px;
+    border: 1px solid #030303;
+  }
+  &__item-name::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 45px;
+    height: 45px;
+    top: 2px;
+    background-image: url(assets/icon/name.svg);
+    background-repeat: no-repeat;
+    background-position: 11px 12px;
+  }
+  &__item-mail {
+    width: 400px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  &__item-mail::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 45px;
+    height: 45px;
+    top: 3px;
+    background-image: url(assets/icon/email.svg);
+    background-repeat: no-repeat;
+    background-position: 11px 12px;
+  }
+  &__mail-input {
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    width: 100%;
+    height: 45px;
+    padding-left: 45px;
+    padding-right: 14px;
+    border: 1px solid #030303;
+  }
+  &__item-phone {
+    width: 400px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  &__item-phone::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 45px;
+    height: 45px;
+    top: 1px;
+    background-image: url(assets/icon/tel.svg);
+    background-repeat: no-repeat;
+    background-position: 11px 12px;
+  }
+  &__phone-input {
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    width: 100%;
+    height: 45px;
+    padding-left: 45px;
+    padding-right: 14px;
+    border: 1px solid #030303;
+  }
+  &__item-ticket {
+    width: 400px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  &__select {
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    width: 100%;
+    height: 45px;
+    padding-left: 45px;
+    padding-right: 14px;
+    border: 1px solid #030303;
+  }
+  &__item-ticket::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 45px;
+    height: 45px;
+    top: 1px;
+    background-image: url(assets/icon/ticket.svg);
+    background-repeat: no-repeat;
+    background-position: 11px 12px;
+  }
+  &__item-ticket::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 45px;
+    height: 45px;
+    top: 2px;
+    right: -2px;
+    background-image: url(assets/icon/date2.svg);
+    background-repeat: no-repeat;
+    background-position: 11px 12px;
+  }
+}
+
+.modal__wrapper-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.entry-ticket {
+  width: 400px;
+  height: 135px;
+  border: 1px solid #030303;
+  &__title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: #9d8665;
+    padding-bottom: 5px;
+    position: relative;
+    margin: 10px 15px;
+  }
+  &__title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--color-red);
+  }
+  &__wrapper-input {
+    margin-bottom: 18px;
+    width: 105px;
+    height: 26px;
+    border: 2px solid #000;
+    display: flex;
+    position: relative;
+    margin-right: 10px;
+  }
+  &__label {
+    padding-left: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    padding-top: 5px;
+    margin-left: 2px;
+  }
+  &__button {
+    display: inline-block;
+    width: 34px;
+    height: 24px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    transition: all 0.5s;
+    background: #030303;
+    color: #fff;
+  }
+  &__button:hover {
+    background: #9d8665;
+  }
+  &__input {
+    width: 35px;
+    border: none;
+    outline: none;
+    text-align: center;
+    height: 24px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+.overview {
+  width: 530px;
+  height: 663px;
+  border: 1px solid #030303;
+  padding: 25px 30px;
+  &__wrapper {
+    width: 470px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    padding-bottom: 5px;
+  }
+  &__sub-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #740c11;
+  }
+  &__content-date {
+    padding-left: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    padding-top: 10px;
+    position: relative;
+  }
+  &__content-date::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 12px;
+    left: 0%;
+    background-image: url(assets/icon/date1.svg);
+    background-repeat: no-repeat;
+  }
+  &__content-time {
+    padding-left: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    padding-top: 5px;
+    position: relative;
+  }
+  &__content-time::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 7px;
+    left: 0%;
+    background-image: url(assets/icon/time.svg);
+    background-repeat: no-repeat;
+  }
+  &__content-ticket-type {
+    padding-left: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    padding-top: 5px;
+    position: relative;
+  }
+  &__content-ticket-type::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 7px;
+    left: 0%;
+    background-image: url(assets/icon/check.svg);
+    background-repeat: no-repeat;
+  }
+  &__img {
+    display: inline-block;
+    width: 150px;
+    height: 120px;
+  }
+}
+
+.total {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__amount {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 0 10px;
+    color: #a4a4a3;
+    background: #030303;
+    border-radius: 3px;
+  }
+  &__type-ticket {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    padding-left: 10px;
+  }
+  &__money {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+  }
+  &-after {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  &-after::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--color-red);
+  }
+  &__total {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 37px;
+  }
+  &__total-money {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+  }
+}
+.card {
+  position: relative;
+  &__item--number {
+    z-index: 1008;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__label-number {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    padding-bottom: 5px;
+  }
+  &__number-input {
+    width: 215px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #000;
+    outline: none;
+  }
+  &__item--date {
+    z-index: 1008;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__label-date {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    padding-bottom: 5px;
+  }
+  &__year-input {
+    width: 100px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #000;
+    outline: none;
+    padding-left: 10px;
+  }
+  &__month-input {
+    width: 100px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #000;
+    outline: none;
+    padding-left: 10px;
+  }
+  &__item--name {
+    z-index: 1008;
+    position: absolute;
+    top: 143px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__label-name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    padding-bottom: 5px;
+  }
+  &__name-input {
+    width: 320px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #000;
+    outline: none;
+  }
+  &__img-visa {
+    z-index: 1008;
+    position: absolute;
+    top: 34px;
+    left: 285px;
+    width: 55px;
+    height: 16px;
+  }
+  &__img-mastercard {
+    z-index: 1008;
+    position: absolute;
+    top: 65px;
+    left: 287px;
+    width: 53px;
+    height: 32px;
+  }
+}
+.card-one-side {
+  margin-top: 10px;
+  width: 360px;
+  height: 211px;
+  background: #bcbcbc;
+  border-radius: 5px;
+  z-index: 1006;
+  position: relative;
+}
+
+.card-other-side {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 110px;
+  width: 360px;
+  height: 211px;
+  border-radius: 5px;
+  background-image: url(assets/other-card-side.jpg);
+  background-size: cover;
+  z-index: 1002;
+  opacity: 0.9;
+}
+.card-code {
+  z-index: 1008;
+  position: absolute;
+  bottom: 80px;
+  right: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+}
+.card-code-cvv {
+  z-index: 1008;
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+  border: 0.5px solid #a4a4a3;
+  outline: none;
+  width: 75px;
+  height: 35px;
+}
+.card-code-content {
+  z-index: 1008;
+  position: absolute;
+  bottom: -18px;
+  right: 26px;
+  width: 55px;
+  height: 50px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+}
+.div-date {
+  width: 215px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__button {
+  margin-top: 56px;
+  margin-left: 252px;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 26px;
+  background: var(--color-red);
+
+  padding: 10px 84px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background: #9d8665;
+  }
+}

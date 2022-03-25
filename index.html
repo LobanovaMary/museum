@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <title>Museum</title>
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div class="modal container hidden">
+      <button class="close-modal">
+        <img src="assets/icon/close.svg" alt="close" />
+      </button>
+      <div class="modal-container">
+        <div class="wrapper-booking">
+          <img src="assets/logo-gold.svg" alt="Logo Gold" />
+          <h2 class="modal__title">Booking tickets</h2>
+          <h4 class="modal__sub-title">Tour to Louvre</h4>
+          <div class="modal-form">
+            <div class="modal__wrapper-row">
+              <div class="modal__item-date">
+                <input
+                  class="modal__date-input"
+                  type="text"
+                  onfocus="(this.type='date')"
+                  onblur="(this.type='text')"
+                  name="date"
+                  id="date"
+                  placeholder="Date"
+                />
+              </div>
+              <div class="modal__item-time">
+                <input
+                  class="modal__time-input"
+                  type="text"
+                  onfocus="(this.type='time')"
+                  onblur="(this.type='text')"
+                  name="time"
+                  id="time"
+                  placeholder="Time"
+                />
+              </div>
+            </div>
+            <div class="modal__item-name">
+              <input
+                class="modal__name-input"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Name"
+              />
+            </div>
+            <div class="modal__item-mail">
+              <input
+                class="modal__mail-input"
+                type="email"
+                name="mail"
+                id="mail"
+                placeholder="E-mail"
+              />
+            </div>
+            <div class="modal__item-phone">
+              <input
+                class="modal__phone-input"
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Phone"
+              />
+            </div>
+            <div class="modal__item-ticket">
+              <select class="modal__select" name="ticket-type">
+                <option disabled="" selected="">Ticket Type</option>
+                <option value="Permanent">Permanent exhibition</option>
+                <option value="Temporary">Temporary exhibition</option>
+                <option value="Combined">Combined Admission</option>
+              </select>
+            </div>
+            <div class="entry-ticket">
+              <h5 class="entry-ticket__title">Entry Ticket</h5>
+              <div class="modal__wrapper-row">
+                <label class="entry-ticket__label" for="basic"
+                  >Basic 18+ (20 €)</label
+                >
+                <div class="entry-ticket__wrapper-input">
+                  <button
+                    class="entry-ticket__button entry-ticket__button--minus"
+                    type="button"
+                    onclick="this.nextElementSibling.stepDown()"
+                  >
+                    –
+                  </button>
+                  <input
+                    class="entry-ticket__input"
+                    type="number"
+                    min="0"
+                    max="20"
+                    value="1"
+                    readonly=""
+                    name="basic"
+                    id="basic"
+                  />
+                  <button
+                    class="entry-ticket__button entry-ticket__button--plus"
+                    type="button"
+                    onclick="this.previousElementSibling.stepUp()"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div class="modal__wrapper-row">
+                <label class="entry-ticket__label" for="basic-ticket"
+                  >Senior 65+ (10 €)</label
+                >
+                <div class="entry-ticket__wrapper-input">
+                  <button
+                    class="entry-ticket__button entry-ticket__button--minus"
+                    type="button"
+                    onclick="this.nextElementSibling.stepDown()"
+                  >
+                    –
+                  </button>
+                  <input
+                    class="entry-ticket__input"
+                    type="number"
+                    min="0"
+                    max="20"
+                    value="1"
+                    readonly=""
+                    name="basic-ticket"
+                    id="basic-ticket"
+                  />
+                  <button
+                    class="entry-ticket__button entry-ticket__button--plus"
+                    type="button"
+                    onclick="this.previousElementSibling.stepUp()"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overview">
+          <div class="overview__wrapper">
+            <div class="overview__content">
+              <h4 class="overview__title">Overview</h4>
+              <h5 class="overview__sub-title">Tour to Louvre</h5>
+              <p class="overview__content-date">Friday, August 19</p>
+              <p class="overview__content-time">16 : 30</p>
+              <p class="overview__content-ticket-type">Temporary exhibition</p>
+            </div>
+            <img
+              src="assets/modal-luvr.jpg"
+              alt="Photo"
+              class="overview__img"
+            />
+          </div>
+          <div class="total total__wrapper">
+            <div class="total__wrapper">
+              <p class="total__amount">2</p>
+              <p class="total__type-ticket">Basic (20 €)</p>
+            </div>
+            <p class="total__money">40 €</p>
+          </div>
+          <div class="total-after total__wrapper">
+            <div class="total__wrapper">
+              <p class="total__amount">2</p>
+              <p class="total__type-ticket">Senior (10 €)</p>
+            </div>
+            <p class="total__money">20 €</p>
+          </div>
+          <div class="total__wrapper">
+            <p class="total__total">Total:</p>
+            <p class="total__total-money">60 €</p>
+          </div>
+          <div class="card">
+            <div class="card-one-side"></div>
+            <div class="card__item--number">
+              <label class="card__label-number" for="number">Card number</label
+              ><input
+                class="card__number-input"
+                type="text"
+                name="card-number"
+                id="number"
+              />
+            </div>
+            <div class="card__item--date">
+              <label class="card__label-date" for="month"
+                >Expiration date</label
+              >
+              <div class="div-date">
+                <input
+                  class="card__month-input"
+                  type="number"
+                  name="month"
+                  min="0"
+                  max="12"
+                  value="03"
+                  id="month"
+                /><input
+                  class="card__year-input"
+                  type="number"
+                  name="year"
+                  min="2021"
+                  max="2050"
+                  value="2024"
+                  id="year"
+                />
+              </div>
+            </div>
+            <div class="card__item--name">
+              <label class="card__label-name" for="number"
+                >Cardholder name</label
+              ><input
+                class="card__name-input"
+                type="text"
+                name="card-name"
+                id="card-name"
+              />
+            </div>
+            <img class="card__img-visa" src="assets/Visa.svg" alt="Visa" />
+            <img
+              class="card__img-mastercard"
+              src="assets/Mastercard.svg"
+              alt="Mastercard"
+            />
+            <p class="card-code">CVC/CVV</p>
+            <input
+              class="card-code-cvv"
+              type="text"
+              name="card-code-cvv"
+              id="card-code-cvv"
+            />
+            <p class="card-code-content">
+              The last 3 or 4 digits on back of the card
+            </p>
+            <div class="card-other-side"></div>
+          </div>
+          <button class="card__button">Book</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <header class="header" id="top">
+      <div class="container header__wrapper">
+        <div class="logo">
+          <span class="logo__icon"></span>
+          <h1 class="logo__name">Louvre</h1>
+        </div>
+
+        <div class="navigation-bar" id="burger-menu">
+          <div class="navigation-bar__icon"></div>
+        </div>
+
+        <nav class="navigation">
+          <ul class="header-nav">
+            <li class="header-nav__item">
+              <a href="#visiting" class="nav__link">Visiting</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="#explore" class="nav__link">Explore</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="#video" class="nav__link">Video</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="#gallery" class="nav__link">Gallery</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="#tickets" class="nav__link">Tickets </a>
+            </li>
+            <li class="header-nav__item">
+              <a href="#contact" class="nav__link">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="welcome" id="welcome">
+        <div class="container welcome__wrapper">
+          <div class="welcome__content">
+            <h2 class="welcome__title section-title">
+              Welcome <br />
+              to the Louvre
+            </h2>
+            <p class="welcome__paragraph">From the castle to the museum</p>
+            <a href="tours/tour1.html" target="_blank" class="welcome__button"
+              >Discover the Louvre</a
+            >
+          </div>
+          <div class="slider">
+            <img
+              src="assets/img/welcome-slider/1.jpg"
+              alt="Img-1"
+              class="slider__img slider--1"
+            />
+            <img
+              src="assets/img/welcome-slider/2.jpg"
+              alt="Img-1"
+              class="slider__img slider--2"
+            />
+            <img
+              src="assets/img/welcome-slider/3.jpg"
+              alt="Img-1"
+              class="slider__img slider--3"
+            />
+            <img
+              src="assets/img/welcome-slider/4.jpg"
+              alt="Img-1"
+              class="slider__img slider--4"
+            />
+            <img
+              src="assets/img/welcome-slider/5.jpg"
+              alt="Img-1"
+              class="slider__img slider--5"
+            />
+          </div>
+          <div class="slider__pagination">
+            <p class="counter">
+              <span class="counter-slide">01</span> | <span>05</span>
+            </p>
+            <div class="dot">
+              <!-- <div class="dot__dots dot__dots--active"></div>
+              <div class="dot__dots"></div>
+              <div class="dot__dots"></div>
+              <div class="dot__dots"></div>
+              <div class="dot__dots"></div> -->
+            </div>
+            <div class="buttons">
+              <button class="btn--left buttons__btn">
+                <img
+                  class="arrow"
+                  src="assets/icon/arr-left.svg"
+                  alt="Arrow left"
+                />
+              </button>
+              <button class="btn--right buttons__btn">
+                <img
+                  class="arrow"
+                  src="assets/icon/arr-right.svg"
+                  alt="Arrow right"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="visiting" id="visiting">
+        <div class="container">
+          <h2 class="visiting__title section-title">Virtual tour</h2>
+          <div class="visiting__card-wrapper">
+            <a href="tours/tour2.html" class="visiting__link" target="_blank">
+              <img
+                class="visiting__img"
+                src="assets/img/visiting/visiting1.jpg"
+                alt="Royal Palace"
+              />
+              <h3 class="visiting__card-title">Royal Palace</h3>
+              <p class="visiting__card-content">360° Virtual Tour</p>
+              <p class="visiting__card-sub-content">
+                Google Street Panorama View
+              </p>
+            </a>
+            <a href="tours/tour3.html" class="visiting__link" target="_blank">
+              <img
+                class="visiting__img"
+                src="assets/img/visiting/visiting2.jpg"
+                alt="Denon Wing"
+              />
+              <h3 class="visiting__card-title">Denon Wing</h3>
+              <p class="visiting__card-content">360° Virtual Tour</p>
+              <p class="visiting__card-sub-content">
+                Google Street Panorama View
+              </p>
+            </a>
+            <a href="tours/tour4.html" class="visiting__link" target="_blank">
+              <img
+                class="visiting__img"
+                src="assets/img/visiting/visiting3.jpg"
+                alt="Colonnade Perrault"
+              />
+              <h3 class="visiting__card-title">Colonnade Perrault</h3>
+              <p class="visiting__card-content">360° Virtual Tour</p>
+              <p class="visiting__card-sub-content">
+                Google Street Panorama View
+              </p>
+            </a>
+            <a href="tours/tour5.html" class="visiting__link" target="_blank">
+              <img
+                class="visiting__img"
+                src="assets/img/visiting/visiting4.jpg"
+                alt="Greek hall"
+              />
+              <h3 class="visiting__card-title">Greek hall</h3>
+              <p class="visiting__card-content">360° Virtual Tour</p>
+              <p class="visiting__card-sub-content">
+                Google Street Panorama View
+              </p>
+            </a>
+            <a href="tours/tour6.html" class="visiting__link" target="_blank">
+              <img
+                class="visiting__img"
+                src="assets/img/visiting/visiting5.jpg"
+                alt="Mona Lisa"
+              />
+              <h3 class="visiting__card-title">Mona Lisa</h3>
+              <p class="visiting__card-content">360° Virtual Tour</p>
+              <p class="visiting__card-sub-content">
+                Google Street Panorama View
+              </p>
+            </a>
+            <a href="tours/tour7.html" class="visiting__link" target="_blank">
+              <img
+                class="visiting__img"
+                src="assets/img/visiting/visiting6.jpg"
+                alt="Night Palace"
+              />
+              <h3 class="visiting__card-title">Night Palace</h3>
+              <p class="visiting__card-content">360° Virtual Tour</p>
+              <p class="visiting__card-sub-content">
+                Google Street Panorama View
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="explore" id="explore">
+        <div class="wrapper-col-2 container">
+          <div class="wrapper-1">
+            <h2 class="explore__title section-title">Picture explore</h2>
+            <p class="explore__content">
+              Las Meninas is a 1656 painting by Diego Velázquez, the leading
+              artist of the Spanish Golden Age.
+            </p>
+            <p class="explore__content">
+              It was cleaned in 1984 to remove a
+              <span class="explore__content-gold">"yellow veil"</span> of dust
+              that had gathered since the previous restoration in the 19th
+              century.
+            </p>
+            <p class="explore__content explore__content--hidden">
+              The cleaning provoked furious protests, not because the picture
+              had been damaged in any way, but because it looked different.
+            </p>
+          </div>
+          <div class="wrapper-img-slider">
+            <div class="images">
+              <div class="img-1"></div>
+              <div class="img-2"></div>
+            </div>
+            <div class="slider-2">
+              <div class="drag-line">
+                <span></span>
+              </div>
+              <input type="range" min="0" max="100" value="61" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="video" id="video">
+        <div class="container">
+          <div class="wrapper-content">
+            <h2 class="video__title section-title">Video journey</h2>
+            <p class="video__content video__content--hidden">
+              Enter and visit one of the most famous museums in the world and
+              enjoy masterpieces such as Mona Lisa or Hammurabi's Code
+            </p>
+          </div>
+          <div class="video__player">
+            <img
+              class="main-player"
+              src="assets/video/poster0.jpg"
+              alt="poster"
+            />
+            <button class="video__player-button">
+              <span class="play-icon"></span>
+            </button>
+            <div class="video__player-controls">
+              <button class="play__button">
+                <img src="assets/video/play.svg" alt="play" class="play-icon" />
+              </button>
+              <input
+                type="range"
+                name="playbackRate"
+                class="player__progress progress"
+                min="0"
+                max="100"
+                step="1"
+                value="54"
+              />
+
+              <button class="volume__button">
+                <img
+                  src="assets/video/volume.svg"
+                  alt="volume"
+                  class="volume-icon"
+                />
+              </button>
+              <input
+                type="range"
+                name="volume"
+                class="player__volume volume"
+                min="0"
+                max="100"
+                step="1"
+                value="45"
+              />
+              <button class="fullscreen__button">
+                <img
+                  src="assets/video/fullscreen.svg"
+                  alt="fullscreen"
+                  class="fullscreen-icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="video__slider">
+            <iframe
+              class="video__slider-video"
+              loading="lazy"
+              src="https://www.youtube.com/embed/aWmJ5DgyWPI"
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <iframe
+              class="video__slider-video"
+              loading="lazy"
+              src="https://www.youtube.com/embed/Vi5D6FKhRmo"
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <iframe
+              class="video__slider-video video__slider-video--hidden"
+              loading="lazy"
+              src="https://www.youtube.com/embed/NOhDysLnTvY"
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="wrapper-center">
+            <div class="video__slider-dots">
+              <button class="video-slider__left"></button>
+              <div class="video-dot video-dot--active"></div>
+              <div class="video-dot"></div>
+              <div class="video-dot"></div>
+              <div class="video-dot"></div>
+              <div class="video-dot"></div>
+              <button class="video-slider__right"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gallary" id="gallery">
+        <div class="container">
+          <h2 class="gallary__title section-title">Art Gallery</h2>
+          <div class="picture-container">
+            <div class="picture-inner-container">
+              <div class="col-1"></div>
+              <div class="col-2"></div>
+              <div class="col-3"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="tickets" id="tickets">
+        <div class="container">
+          <h2 class="tickets__title section-title">BUY TICKETS</h2>
+          <div class="wrapper-ticket-content">
+            <div class="tickets__img"></div>
+            <div class="wrapper-tickets-form">
+              <div class="ticket-type__wrapper ticket-type--hidden">
+                <h4 class="ticket-type__title">Ticket Type</h4>
+                <label class="ticket-type__option"
+                  >Permanent exhibition
+                  <input type="radio" checked="checked" name="radio" />
+                  <span class="ticket-type__checkmark"></span>
+                </label>
+                <label class="ticket-type__option"
+                  >Temporary exhibition
+                  <input type="radio" name="radio" />
+                  <span class="ticket-type__checkmark"></span>
+                </label>
+                <label class="ticket-type__option"
+                  >Combined Admission
+                  <input type="radio" name="radio" />
+                  <span class="ticket-type__checkmark"></span>
+                </label>
+              </div>
+              <div class="wrapper-amount">
+                <h4 class="amount__title">Amount</h4>
+                <label class="amount__label" for="amount-basic"
+                  >Basic 18+
+                </label>
+                <div class="amount__wrapper-input">
+                  <button
+                    class="amount__button amount__button--minus"
+                    type="button"
+                    onclick="this.nextElementSibling.stepDown()"
+                  >
+                    –
+                  </button>
+                  <input
+                    class="amount__input"
+                    type="number"
+                    min="0"
+                    max="20"
+                    value="1"
+                    readonly=""
+                    name="basic"
+                    id="amount-basic"
+                  />
+                  <button
+                    class="amount__button amount__button--plus"
+                    type="button"
+                    onclick="this.previousElementSibling.stepUp()"
+                  >
+                    +
+                  </button>
+                </div>
+                <label class="amount__label amount__label--senior" for="senior"
+                  >Senior 65+</label
+                >
+                <div class="amount__wrapper-input">
+                  <button
+                    class="amount__button amount-__button--minus"
+                    type="button"
+                    onclick="this.nextElementSibling.stepDown()"
+                  >
+                    –
+                  </button>
+                  <input
+                    class="amount__input"
+                    type="number"
+                    min="0"
+                    max="20"
+                    value="1"
+                    readonly=""
+                    name="basic"
+                    id="senior"
+                  />
+                  <button
+                    class="amount__button amount__button--plus"
+                    type="button"
+                    onclick="this.previousElementSibling.stepUp()"
+                  >
+                    +
+                  </button>
+                </div>
+                <p class="amount__price">Total €220</p>
+                <button class="amount__buy show-modal">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="parallax"></div>
+      <section class="contact" id="contact">
+        <div class="container">
+          <h2 class="contact__title section-title">Contacts</h2>
+          <div class="wrapper-contact">
+            <div class="wrapper-address">
+              <p class="contact__name">
+                Palais Royal <br />
+                Musee du Louvre
+              </p>
+              <p class="contact__address">address: 75001 Paris, France</p>
+              <p class="contact__address">
+                phone:
+                <a href="tel:+1234567" class="contact__link">
+                  +33(0) 1 40 20 50 50</a
+                >
+              </p>
+              <p class="contact__address">
+                mail:
+                <a class="contact__link" href="mailto:same@mail.com">
+                  info@louvre.fr</a
+                >
+              </p>
+            </div>
+            <div class="wrapper-map">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://api.mapbox.com/styles/v1/reasaid/ckupfzizoivdt17o4gra5e74z.html?title=false&access_token=pk.eyJ1IjoicmVhc2FpZCIsImEiOiJja3VvNTdyMjUxOW84Mm9tb3o2aXRqMzJoIn0.9YrVtUGeV_v3FecHTOsX8g&zoomwheel=false#15.84/48.860948/2.337381"
+                title="Monochrome"
+                style="border: none"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-wrapper">
+        <div class="footer__navigation">
+          <div class="logo">
+            <span class="logo__icon"></span>
+            <h2 class="logo__name">Louvre</h2>
+          </div>
+          <div class="nav-wrapper-col-1">
+            <ul class="footer-nav">
+              <li class="footer-nav__item">
+                <a href="#visiting" class="nav__link footer-nav__link"
+                  >Visiting</a
+                >
+              </li>
+              <li class="footer-nav__item">
+                <a href="#explore" class="nav__link footer-nav__link"
+                  >Explore</a
+                >
+              </li>
+              <li class="footer-nav__item">
+                <a href="#video" class="nav__link footer-nav__link">Video</a>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-wrapper-col-2">
+            <ul class="footer-nav">
+              <li class="footer-nav__item">
+                <a href="#gallery" class="nav__link footer-nav__link"
+                  >Gallery</a
+                >
+              </li>
+              <li class="footer-nav__item">
+                <a href="#tickets" class="nav__link footer-nav__link"
+                  >Tickets
+                </a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="#contact" class="nav__link footer-nav__link"
+                  >Contacts</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__socials">
+          <ul class="socials">
+            <li class="social__item">
+              <a href="https://www.youtube.com/user/louvre"
+                ><img
+                  src="assets/icon/youtube.svg"
+                  alt="youtube-icon"
+                  class="youtube-icon"
+              /></a>
+            </li>
+            <li class="social__item">
+              <a href="https://www.instagram.com/museelouvre/"
+                ><img
+                  src="assets/icon/insta.svg"
+                  alt="insta-icon"
+                  class="insta-icon"
+              /></a>
+            </li>
+            <li class="social__item">
+              <a href="https://www.facebook.com/museedulouvre"
+                ><img
+                  src="assets/icon/face.svg"
+                  alt="face-icon"
+                  class="face-icon"
+              /></a>
+            </li>
+            <li class="social__item">
+              <a href="http://twitter.com/museelouvre"
+                ><img
+                  src="assets/icon/twitter.svg"
+                  alt="twit-icon"
+                  class="twit-icon"
+              /></a>
+            </li>
+            <li class="social__item">
+              <a href="https://www.pinterest.fr/museedulouvre/"
+                ><img
+                  src="assets/icon/point.svg"
+                  alt="pint-icon"
+                  class="pint-icon"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__line"></div>
+      <div class="container footer-wrapper-second">
+        <p class="footer__p">&copy; 2021</p>
+        <p class="footer__p footer__p--hidden">The Rolling Scopes School</p>
+        <p class="footer__p">Lobanova Maria</p>
+      </div>
+    </footer>
+    <a href="#top"><div class="go-up"></div></a>
+  </body>
+</html>

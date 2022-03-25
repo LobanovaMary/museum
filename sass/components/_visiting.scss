@@ -1,0 +1,160 @@
+.visiting {
+  padding-top: 75px;
+
+  @media only screen and (max-width: $bp-large) {
+    padding-top: 50px;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @media only screen and (max-width: $bp-small) {
+    padding-bottom: 0px;
+  }
+
+  &__title {
+    color: var(--color-gold);
+    position: relative;
+    margin-bottom: 75px;
+
+    padding-bottom: 29px;
+    @media only screen and (max-width: $bp-large) {
+      margin-bottom: 60px;
+      padding-bottom: 20px;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      margin-bottom: 40px;
+    }
+  }
+  &__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 3px;
+    width: 100%;
+    background: var(--color-red);
+  }
+  &__card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-large) {
+      justify-content: space-evenly;
+    }
+  }
+
+  &__link {
+    font-family: Forum, cursive;
+    font-style: normal;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    width: 440px;
+    margin-bottom: 75px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    @media only screen and (max-width: $bp-largest) {
+      width: 400px;
+      margin-bottom: 61px;
+    }
+    @media only screen and (max-width: $bp-large) {
+      width: 330px;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      width: 280px;
+      margin-bottom: 40px;
+    }
+    @media only screen and (max-width: $bp-small) {
+      margin-bottom: 39px;
+    }
+  }
+  &__link:hover &__card-title::after {
+    transition: all 0.5s;
+    width: 100%;
+  }
+  &__link:hover &__img {
+    transition: all 0.3s;
+    transform: scale(1.1);
+  }
+  &__img {
+    margin-bottom: 26px;
+    display: inline-block;
+  }
+  &__card-title {
+    position: relative;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 35px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+    @media only screen and (max-width: $bp-large) {
+      font-size: 28px;
+      line-height: 30px;
+      letter-spacing: 3px;
+      padding-bottom: 11px;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 22px;
+      line-height: 24px;
+    }
+    @media only screen and (max-width: $bp-small) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  &__card-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 300px;
+    background: var(--color-red);
+    @media only screen and (max-width: $bp-large) {
+      width: 150px;
+    }
+  }
+  &__card-content {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 22px;
+    line-height: 26px;
+    padding-bottom: 10px;
+    @media only screen and (max-width: $bp-large) {
+      font-size: 20px;
+      line-height: 23px;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 18px;
+      line-height: 21px;
+    }
+    @media only screen and (max-width: $bp-small) {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  &__card-sub-content {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 21px;
+    @media only screen and (max-width: $bp-large) {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+}

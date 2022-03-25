@@ -1,0 +1,145 @@
+.contact {
+  padding-top: 75px;
+  padding-bottom: 69px;
+  @media only screen and (max-width: $bp-large) {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  @media only screen and (max-width: $bp-small) {
+    padding-bottom: 40px;
+  }
+  &__title {
+    color: var(--color-gold);
+    position: relative;
+    margin-bottom: 75px;
+    padding-bottom: 29px;
+    @media only screen and (max-width: $bp-large) {
+      padding-bottom: 16px;
+      margin-bottom: 60px;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+    }
+  }
+  &__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 3px;
+    width: 100%;
+    background: var(--color-red);
+  }
+
+  &__name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    color: #000000;
+    margin-bottom: 50px;
+    @media only screen and (max-width: $bp-large) {
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 35px;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 20px;
+      line-height: 23px;
+      margin-bottom: 40px;
+    }
+    @media only screen and (max-width: $bp-small) {
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 42px;
+    }
+  }
+  &__address {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 25px;
+    @media only screen and (max-width: $bp-large) {
+      font-size: 20px;
+      line-height: 23px;
+      margin-bottom: 15px;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 40px;
+      }
+    }
+    @media only screen and (max-width: $bp-small) {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  &__link {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 25px;
+    color: #000000;
+    text-decoration: none;
+
+    @media only screen and (max-width: $bp-large) {
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 18px;
+      line-height: 21px;
+    }
+    @media only screen and (max-width: $bp-small) {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+}
+
+.wrapper-contact {
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 860px) {
+    flex-direction: column;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
+}
+
+.wrapper-map {
+  height: 620px;
+  width: 960px;
+  @media only screen and (max-width: $bp-largest) {
+    width: 840px;
+    height: 500px;
+  }
+  @media only screen and (max-width: $bp-large) {
+    width: 694px;
+    height: 454px;
+  }
+  @media only screen and (max-width: 860px) {
+    width: 100%;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    height: 476px;
+  }
+  @media only screen and (max-width: $bp-small) {
+    height: 248px;
+  }
+}
