@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
+:root {
+  --color-dark-1: #030303;
+  --color-red: #710707;
+  --color-gold: #9d8665;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Forum, cursive;
+  font-style: normal;
+  position: relative;
+  color: #fff;
+}
+
+.section-title {
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 65px;
+  }
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50px;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  @media only screen and (max-width: $bp-small) {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}

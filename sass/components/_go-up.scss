@@ -1,0 +1,22 @@
+.go-up {
+  position: fixed;
+  width: 90px;
+  height: 90px;
+  padding: 20px 20px;
+  border-radius: 50%;
+  background-color: hsla(35, 72%, 77%, 0.808);
+  bottom: 50px;
+  right: 80px;
+  z-index: 1000;
+  background-image: url(assets/icon/chevron-up-outline.svg);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+  transition: all 0.7s;
+  overflow: hidden;
+
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
