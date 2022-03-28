@@ -474,11 +474,20 @@
             </p>
           </div>
           <div class="video__player">
-            <img
-              class="main-player"
-              src="assets/video/poster0.jpg"
-              alt="poster"
-            />
+            <div class="main-player">
+              <div class="video-slider__video" data-video="1">
+                <a
+                  href="https://youtube.com/zp1BXPX8jcU"
+                  class="video-slider__link"
+                >
+                  <img
+                    class="video-slider__media"
+                    src="https://i.ytimg.com/vi/zp1BXPX8jcU/mqdefault.jpg"
+                    alt="YouTube video"
+                  />
+                </a>
+              </div>
+            </div>
             <button class="video__player-button">
               <span class="play-icon"></span>
             </button>
@@ -521,40 +530,84 @@
               </button>
             </div>
           </div>
-          <div class="video__slider">
-            <iframe
-              class="video__slider-video"
-              loading="lazy"
-              src="https://www.youtube.com/embed/aWmJ5DgyWPI"
-              title="YouTube video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-            <iframe
-              class="video__slider-video"
-              loading="lazy"
-              src="https://www.youtube.com/embed/Vi5D6FKhRmo"
-              title="YouTube video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-            <iframe
-              class="video__slider-video video__slider-video--hidden"
-              loading="lazy"
-              src="https://www.youtube.com/embed/NOhDysLnTvY"
-              title="YouTube video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+          <div class="video-slider">
+            <div class="video-slider__video" data-video="1">
+              <a
+                href="https://youtube.com/zp1BXPX8jcU"
+                class="video-slider__link"
+              >
+                <img
+                  class="video-slider__media"
+                  src="https://i.ytimg.com/vi/zp1BXPX8jcU/mqdefault.jpg"
+                  alt="YouTube video"
+              /></a>
+              <button class="video__player-button">
+                <span class="play-icon"></span>
+              </button>
+            </div>
+            <div class="video-slider__video" data-video="2">
+              <a
+                href="https://youtube.com/Vi5D6FKhRmo"
+                class="video-slider__link"
+                ><img
+                  class="video-slider__media"
+                  src="https://i.ytimg.com/vi/Vi5D6FKhRmo/mqdefault.jpg"
+                  alt="YouTube video"
+                />
+              </a>
+              <button class="video__player-button">
+                <span class="play-icon"></span>
+              </button>
+            </div>
+            <div class="video-slider__video" data-video="3">
+              <a
+                href="https://youtube.com/NOhDysLnTvY"
+                class="video-slider__link"
+              >
+                <img
+                  class="video-slider__media"
+                  src="https://i.ytimg.com/vi/NOhDysLnTvY/mqdefault.jpg"
+                  alt="YouTube video"
+              /></a>
+              <button class="video__player-button">
+                <span class="play-icon"></span>
+              </button>
+            </div>
+            <div class="video-slider__video" data-video="4">
+              <a
+                href="https://youtube.com/aWmJ5DgyWPI"
+                class="video-slider__link"
+                ><img
+                  class="video-slider__media"
+                  src="https://i.ytimg.com/vi/aWmJ5DgyWPI/mqdefault.jpg"
+                  alt="YouTube video"
+              /></a>
+              <button class="video__player-button">
+                <span class="play-icon"></span>
+              </button>
+            </div>
+            <div class="video-slider__video" data-video="5">
+              <a
+                href="https://youtube.com/2OR0OCr6uRE"
+                class="video-slider__link"
+                ><img
+                  class="video-slider__media"
+                  src="https://i.ytimg.com/vi/2OR0OCr6uRE/mqdefault.jpg"
+                  alt="YouTube video"
+              /></a>
+              <button class="video__player-button">
+                <span class="play-icon"></span>
+              </button>
+            </div>
           </div>
           <div class="wrapper-center">
-            <div class="video__slider-dots">
+            <div class="video-slider__dots">
               <button class="video-slider__left"></button>
-              <div class="video-dot video-dot--active"></div>
-              <div class="video-dot"></div>
-              <div class="video-dot"></div>
-              <div class="video-dot"></div>
-              <div class="video-dot"></div>
+              <div class="video-dot video-dot--active" data-slide="1"></div>
+              <div class="video-dot" data-slide="2"></div>
+              <div class="video-dot" data-slide="3"></div>
+              <div class="video-dot" data-slide="4"></div>
+              <div class="video-dot" data-slide="5"></div>
               <button class="video-slider__right"></button>
             </div>
           </div>
